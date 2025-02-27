@@ -46,11 +46,54 @@ i
 {
     &:hover{color: blue;}
 }
-.carousel-item
+
+
+.newspaper 
 {
-    img
-    {
-        max-height: 500px;
-    }
+    padding: 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
 }
 
+
+.ball 
+{
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    background: #c00;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: transform 1s;
+}
+/*
+.animatedDiv
+{
+    font-size: 1.6rem;
+    padding: 20px;
+    border: 3px solid red;
+    border-radius: 20px;
+    width: 480px;
+  
+    display: none;
+    opacity: 0;
+    transition:
+      opacity 1s,
+      display 1s allow-discrete;
+     Equivalent to
+    transition: all 1s allow-discrete; 
+}
+
+.showing {
+    opacity: 1;
+    display: block;
+  }
+starting-style {
+    .showing {
+      opacity: 0;
+    }
+  }
+    */
