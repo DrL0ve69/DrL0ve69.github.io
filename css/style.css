@@ -12251,4 +12251,8 @@ i {
 
 .fa-facebook:hover {
   color: blue;
+}
+
+.carousel-item img {
+  max-height: 500px;
 }/*# sourceMappingURL=style.css.map */
