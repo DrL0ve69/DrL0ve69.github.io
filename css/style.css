@@ -12207,6 +12207,20 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/* 7. Avoid text overflows */
+p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+section {
+  min-height: 100vh;
+}
+
 a, .nav-link {
   text-decoration: none;
   color: black;
@@ -12217,6 +12231,10 @@ a:hover, .nav-link:hover {
 
 .active {
   color: #f41b75;
+}
+
+p {
+  color: black;
 }
 
 ul {

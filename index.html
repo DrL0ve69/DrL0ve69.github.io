@@ -14,12 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a class="btn btn-secondary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        Link with href
-    </a>
-      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        Button with data-bs-target
-      </button>
+
       <!--  offcanvas-end=DROITE  offcanvas-start=GAUCHE  offcanvas-top offcanvas-bottom  -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <!-- data-bs-scroll="true" pour pouvoir scroll -->
@@ -57,10 +52,18 @@
                 <a class="navbar-brand" href="#"><img src="" alt="">Logo</a>
             </div>
             <div class="container-fluid">
-                <ul class="nav-ul">
+                <ul class="d-flex">
                     <li><a class="nav-link active" href="#">Home</a></li>
-                    <li><a class="nav-link" href="#">Home</a></li>
-                    <li><a class="nav-link" href="#">Home</a></li>
+                    <li><a class="nav-link" href="#">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Button with data-bs-target
+                      </button></a>
+                    </li>
+                    <li>
+                        <a class="btn btn-secondary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                            Link with href
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -92,15 +95,119 @@
                 </div>
             </div>
         </div>
+        <!-- Accordéon -->
+        <div class="container">
+            <section>
+                <div class="container-fluid text-center">
+                    <h3>Accordéon Horizontal</h3>
+                </div>
+                <div class="container">
+                    <div class="container-slides">
+                        <ul class="slides">
+                            <li class="slide active brand1">
+                                <a href="#">
+                                    <span>Titre section 1</span>
+                                </a>
+                                <div class="slide-content">
+                                    <h4>Titre section 1</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum ipsam vel? Consectetur quod repellat quae debitis cumque neque a, dignissimos accusantium obcaecati vitae? Dolorem facilis delectus distinctio veritatis esse.
+                                        Velit quam libero animi, placeat iure ab. Sapiente nobis iusto illo praesentium dolore beatae facere, similique eveniet fugiat saepe omnis quidem nulla natus ullam deserunt modi repellat tempora at! Minus!
+                                        Labore ipsa nobis atque totam quos laborum, voluptatum est, iure, dolorum error necessitatibus! Voluptas nulla, asperiores obcaecati similique assumenda reiciendis ab aperiam aliquid corporis maxime cum, velit et totam earum.
+                                        Reiciendis tempore, nisi dicta vel iure ducimus praesentium id consequatur, vitae, et qui rerum ratione corrupti nesciunt ipsum libero possimus quaerat. Officiis ex aliquam vero error, quod explicabo consectetur praesentium.
+                                        Neque itaque fugit modi eveniet, voluptatum, temporibus eaque enim blanditiis ut, odio suscipit facere labore? Impedit quos quam sit illum a consectetur inventore autem, vero, optio delectus quae, totam quaerat.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="slide active brand1">
+                                <a href="#">
+                                    <span>Titre section 2</span>
+                                </a>
+                                <div class="slide-content">
+                                    <h4>Titre section 2</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum ipsam vel? Consectetur quod repellat quae debitis cumque neque a, dignissimos accusantium obcaecati vitae? Dolorem facilis delectus distinctio veritatis esse.
+                                        Velit quam libero animi, placeat iure ab. Sapiente nobis iusto illo praesentium dolore beatae facere, similique eveniet fugiat saepe omnis quidem nulla natus ullam deserunt modi repellat tempora at! Minus!
+                                        Labore ipsa nobis atque totam quos laborum, voluptatum est, iure, dolorum error necessitatibus! Voluptas nulla, asperiores obcaecati similique assumenda reiciendis ab aperiam aliquid corporis maxime cum, velit et totam earum.
+                                        Reiciendis tempore, nisi dicta vel iure ducimus praesentium id consequatur, vitae, et qui rerum ratione corrupti nesciunt ipsum libero possimus quaerat. Officiis ex aliquam vero error, quod explicabo consectetur praesentium.
+                                        Neque itaque fugit modi eveniet, voluptatum, temporibus eaque enim blanditiis ut, odio suscipit facere labore? Impedit quos quam sit illum a consectetur inventore autem, vero, optio delectus quae, totam quaerat.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="slide brand2">
+                                <a href="#">
+                                    <span>Titre section 2</span>
+                                </a>
+                                <div class="slide-content">
+                                    <h4>Titre section 2</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum ipsam vel? Consectetur quod repellat quae debitis cumque neque a, dignissimos accusantium obcaecati vitae? Dolorem facilis delectus distinctio veritatis esse.
+                                        Velit quam libero animi, placeat iure ab. Sapiente nobis iusto illo praesentium dolore beatae facere, similique eveniet fugiat saepe omnis quidem nulla natus ullam deserunt modi repellat tempora at! Minus!
+                                        Labore ipsa nobis atque totam quos laborum, voluptatum est, iure, dolorum error necessitatibus! Voluptas nulla, asperiores obcaecati similique assumenda reiciendis ab aperiam aliquid corporis maxime cum, velit et totam earum.
+                                        Reiciendis tempore, nisi dicta vel iure ducimus praesentium id consequatur, vitae, et qui rerum ratione corrupti nesciunt ipsum libero possimus quaerat. Officiis ex aliquam vero error, quod explicabo consectetur praesentium.
+                                        Neque itaque fugit modi eveniet, voluptatum, temporibus eaque enim blanditiis ut, odio suscipit facere labore? Impedit quos quam sit illum a consectetur inventore autem, vero, optio delectus quae, totam quaerat.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="slide brand3">
+                                <a href="#">
+                                    <span>Titre section 3</span>
+                                </a>
+                                <div class="slide-content">
+                                    <h4>Titre section 3</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum ipsam vel? Consectetur quod repellat quae debitis cumque neque a, dignissimos accusantium obcaecati vitae? Dolorem facilis delectus distinctio veritatis esse.
+                                        Velit quam libero animi, placeat iure ab. Sapiente nobis iusto illo praesentium dolore beatae facere, similique eveniet fugiat saepe omnis quidem nulla natus ullam deserunt modi repellat tempora at! Minus!
+                                        Labore ipsa nobis atque totam quos laborum, voluptatum est, iure, dolorum error necessitatibus! Voluptas nulla, asperiores obcaecati similique assumenda reiciendis ab aperiam aliquid corporis maxime cum, velit et totam earum.
+                                        Reiciendis tempore, nisi dicta vel iure ducimus praesentium id consequatur, vitae, et qui rerum ratione corrupti nesciunt ipsum libero possimus quaerat. Officiis ex aliquam vero error, quod explicabo consectetur praesentium.
+                                        Neque itaque fugit modi eveniet, voluptatum, temporibus eaque enim blanditiis ut, odio suscipit facere labore? Impedit quos quam sit illum a consectetur inventore autem, vero, optio delectus quae, totam quaerat.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="slide brand4">
+                                <a href="#">
+                                    <span>Titre section 4</span>
+                                </a>
+                                <div class="slide-content">
+                                    <h4>Titre section 4</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum ipsam vel? Consectetur quod repellat quae debitis cumque neque a, dignissimos accusantium obcaecati vitae? Dolorem facilis delectus distinctio veritatis esse.
+                                        Velit quam libero animi, placeat iure ab. Sapiente nobis iusto illo praesentium dolore beatae facere, similique eveniet fugiat saepe omnis quidem nulla natus ullam deserunt modi repellat tempora at! Minus!
+                                        Labore ipsa nobis atque totam quos laborum, voluptatum est, iure, dolorum error necessitatibus! Voluptas nulla, asperiores obcaecati similique assumenda reiciendis ab aperiam aliquid corporis maxime cum, velit et totam earum.
+                                        Reiciendis tempore, nisi dicta vel iure ducimus praesentium id consequatur, vitae, et qui rerum ratione corrupti nesciunt ipsum libero possimus quaerat. Officiis ex aliquam vero error, quod explicabo consectetur praesentium.
+                                        Neque itaque fugit modi eveniet, voluptatum, temporibus eaque enim blanditiis ut, odio suscipit facere labore? Impedit quos quam sit illum a consectetur inventore autem, vero, optio delectus quae, totam quaerat.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="slidebrand5">
+                                <a href="#">
+                                    <span>Titre section 5</span>
+                                </a>
+                                <div class="slide-content">
+                                    <h4>Titre section 5</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam harum ipsam vel? Consectetur quod repellat quae debitis cumque neque a, dignissimos accusantium obcaecati vitae? Dolorem facilis delectus distinctio veritatis esse.
+                                        Velit quam libero animi, placeat iure ab. Sapiente nobis iusto illo praesentium dolore beatae facere, similique eveniet fugiat saepe omnis quidem nulla natus ullam deserunt modi repellat tempora at! Minus!
+                                        Labore ipsa nobis atque totam quos laborum, voluptatum est, iure, dolorum error necessitatibus! Voluptas nulla, asperiores obcaecati similique assumenda reiciendis ab aperiam aliquid corporis maxime cum, velit et totam earum.
+                                        Reiciendis tempore, nisi dicta vel iure ducimus praesentium id consequatur, vitae, et qui rerum ratione corrupti nesciunt ipsum libero possimus quaerat. Officiis ex aliquam vero error, quod explicabo consectetur praesentium.
+                                        Neque itaque fugit modi eveniet, voluptatum, temporibus eaque enim blanditiis ut, odio suscipit facere labore? Impedit quos quam sit illum a consectetur inventore autem, vero, optio delectus quae, totam quaerat.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Début Footer-->
     <footer class="d-flex">
-        <div class="container">
+        <div class="container d-flex align-items-center text-wrap">
             <p>Terms&Conditions</p>
         </div>
         <div class="container d-flex justify-content-end">
-            <ul class="d-flex align-items-end">
+            <ul class="d-flex align-items-end flex-wrap">
                 <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>

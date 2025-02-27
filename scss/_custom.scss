@@ -3,6 +3,18 @@ body
 {
     font-family: $mainFont;
 }
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+section
+{
+    min-height: 100vh;
+}
 a, .nav-link
 {
     text-decoration: none;
@@ -16,6 +28,7 @@ a, .nav-link
 {
     color: $primary;
 }
+p{color: black;}
 ul
 {
     list-style: none;
