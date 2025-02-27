@@ -1,0 +1,26 @@
+
+body
+{
+    font-family: $mainFont;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+    &:hover
+    {
+        color: darken($primary, 0.8);
+    }
+    .active
+    {
+        color: $primary;
+    }
+}
+ul
+{
+    list-style: none;
+    li
+    {
+        margin: 1rem;
+    }
+}
