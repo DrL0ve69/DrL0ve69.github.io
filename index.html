@@ -14,24 +14,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a class="btn btn-secondary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        Link with href
+    </a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Button with data-bs-target
+      </button>
+      <!--  offcanvas-end=DROITE  offcanvas-start=GAUCHE  offcanvas-top offcanvas-bottom  -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <!-- data-bs-scroll="true" pour pouvoir scroll -->
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Tous les exercices Javascript :
+            </div>
 
+            <div class="dropdown mt-3">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Exercice Horloge/index.html">Horloge 1</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Exercice4_Compteur/index.html">Compteur</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Exercice5_RandomColors/index.html">Random Colors</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Exercice6_Lightbox/index.html">Lightbox</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Exercice7_ToDoList/index.html">ToDo-List</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Menu Fixe au Scroll/index.html">MenuFixScroll</a></li>
+                    <li class="dropdown-item"><a href="Exercices/Panneau coulissant/index.html">PanneauCoulisssant</a></li>
+                    <li class="dropdown-item"><a href="Exercices/TP7-Accordeon/index.html">Accordéon</a>
+                </ul>
+          </div>
+        </div>
+    </div>
     <!-- Début -->
     <header>
-        <nav class="nav nav-bar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a href="#"><img src="" alt="">Logo</a>
+                <a class="navbar-brand" href="#"><img src="" alt="">Logo</a>
             </div>
             <div class="container-fluid">
                 <ul class="nav-ul">
                     <li><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-link"><a href="Exercices/Exercice Horloge/index.html">Horloge 1</a></li>
-                    <li class="nav-link"><a href="Exercices/Exercice4_Compteur/index.html">Compteur</a></li>
-                    <li class="nav-link"><a href="Exercices/Exercice5_RandomColors/index.html">Random Colors</a></li>
-                    <li class="nav-link"><a href="Exercices/Exercice6_Lightbox/index.html">Lightbox</a></li>
-                    <li class="nav-link"><a href="Exercices/Exercice7_ToDoList/index.html">ToDo-List</a></li>
-                    <li class="nav-link"><a href="Exercices/Menu Fixe au Scroll/index.html">MenuFixScroll</a></li>
-                    <li class="nav-link"><a href="Exercices/Panneau coulissant/index.html">PanneauCoulisssant</a></li>
-                    <li class="nav-link"><a href="Exercices/TP7-Accordeon/index.html">Accordéon</a></li>
+                    <li><a class="nav-link" href="#">Home</a></li>
+                    <li><a class="nav-link" href="#">Home</a></li>
                 </ul>
             </div>
         </nav>
