@@ -174,7 +174,6 @@ const refreshCartHTML = () =>
 document.addEventListener('click', e =>
 {
     const btnDeleteAll = document.querySelector('#btnTrashAll');
-    const cartBody = document.querySelector('.offcanvas-body');
     let buttonClick = e.target;
     let idProduit = buttonClick.dataset.id;
     let position = cart.findIndex(value => value.produit_id == idProduit);
