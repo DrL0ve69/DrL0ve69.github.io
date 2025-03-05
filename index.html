@@ -41,10 +41,66 @@
     </div>
     <!-- Début du header contenant nav & sectionHero -->
     <!--
-        • Nom du magasin ou logo fictif.
+        • Nom du magasin ou logo fictif. CHECK => DR.LOVEIT
         • Une barre de navigation contenant :
-        o Un bouton “Panier” qui ouvre un popup affichant les articles du panier.
-        o Un bouton “Contact” qui ouvre un popup avec un formulaire de contact.
+        o Un bouton “Panier” qui ouvre un popup affichant les articles du panier. CHECK => VOIR NAV
+        o Un bouton “Contact” qui ouvre un popup avec un formulaire de contact. CHECK => vOIR HEADER HERO, *** AJOUTER L'ENVOIE ***
+
+
+        2. Section Produits
+        Affichage des produits sous forme de cartes Bootstrap, chargés dynamiquement depuis un fichier
+        produits.json. *** À FAIRE => Enregistrer le cart sous un fichier .json ***
+        Chaque carte produit doit contenir :
+        • Une image.
+        • Un titre et une courte description.
+        • Le prix.
+        • Deux boutons :
+        o “Ajouter au panier” (ajoute l’article au panier et le sauvegarde dans LocalStorage). CHECK => Voir script
+        o “Détails” (ouvre un popup détaillé du produit). *** À FAIRE => avec page complète&lightbox/modal
+        Minimum : 6 produits. Les données doivent être chargées dynamiquement avec JavaScript. 6produits, manque 2images
+
+
+        3. Popups & Interactions
+            3.1. Popup du Panier
+            • Doit s’ouvrir lorsque l’utilisateur clique sur “Panier” dans le menu. CHECK
+            • Doit afficher dynamiquement le contenu du panier stocké dans LocalStorage. CHECK
+            Le popup doit contenir :
+            • Les produits ajoutés au panier (image, nom, prix, quantité). CHECK
+            • Le prix total calculé automatiquement. CHECK
+            • Un bouton “Vider le panier” pour tout supprimer. CHECK
+            • Un bouton “Fermer” pour fermer le popup. CHECK
+
+            3.2. Popup de Détails Produit *** À FAIRE ***
+            Doit s’ouvrir lorsque l’utilisateur clique sur “Détails”.
+            Affiche des informations plus complètes sur le produit.
+            Le popup doit contenir :
+            • Une image agrandie du produit.
+            • Le nom du produit.
+            • Une description plus détaillée.
+            • Le prix.
+            • Un bouton “Ajouter au panier”.
+
+            3.3. Popup du Formulaire de Contact
+            Doit s’ouvrir lorsqu’on clique sur “Contact” dans la barre de navigation. CHECK
+            Le formulaire doit être validé avec JavaScript avant envoi. *** À FAIRE ***
+            Le formulaire doit contenir :
+            • Nom (obligatoire, min. 3 caractères). *** À FAIRE ***
+            • Courriel (obligatoire, format valide). *** À FAIRE ***
+            • Message (obligatoire, min. 10 caractères). *** À FAIRE ***
+            • Un bouton “Envoyer”.
+            Validation JavaScript obligatoire :
+            • Empêcher l’envoi si un champ est invalide. *** À FAIRE ***
+            • Afficher des messages d’erreur sous les champs concernés. *** À FAIRE ***
+            • Afficher un message de confirmation en cas de succès. *** À FAIRE ***
+
+        4. Pied de page (Footer) *** À FAIRE ***
+        • Informations fictives du magasin (ex: contact, liens sociaux).
+        • Lien vers les mentions légales.
+
+
+        5. Flèche Retour en Haut
+        • Une flèche flottante doit apparaître après un certain défilement. *** À FAIRE => disparaître au début de page ***
+        • Lorsqu’elle est cliquée, la page remonte en douceur vers le haut. CHECK => Avec tooltip!
     -->
     <header>
 
@@ -66,11 +122,12 @@
                     <a class="nav-link" href="#sectionProduits">Produits</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Projets</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#sectionProduits">Nos produits</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="PagesDocWeb/index.html">Acceuil projets</a></li>
+                      <li><a class="dropdown-item" href="PagesDocWeb/Exercices/Exercice7_ToDoList/index.html">ToDo list</a></li>
+                      <li><a class="dropdown-item" href="PagesDocWeb/Exercices/Exercice Horloge/index.html">Horloge numérique</a></li>
+                      <li><a class="dropdown-item" href="PagesDocWeb/Exercices/Exercice5_RandomColors/index.html">RandomClr Generetor</a></li>
                     </ul>
                   </li>
                 </ul>
