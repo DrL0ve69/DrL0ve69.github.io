@@ -1,4 +1,3 @@
-// Les variables personnelles
 @import "customVariables";
 @import "mixins/banner";
 @include bsBanner("");
@@ -52,5 +51,4 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
-// Le custom du document
 @import "custom";

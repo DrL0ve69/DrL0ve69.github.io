@@ -1,0 +1,99 @@
+
+body
+{
+    font-family: $mainFont;
+}
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+section
+{
+    min-height: 100vh;
+}
+a, .nav-link
+{
+    text-decoration: none;
+    color: black;
+    &:hover
+    {
+        color: darken($primary, 0.8);
+    }
+}
+.active
+{
+    color: $primary;
+}
+p{color: black;}
+ul
+{
+    list-style: none;
+    li
+    {
+        margin: 1rem;
+    }
+}
+i
+{
+    font-size: 2.5rem;
+    color: $primary;
+}
+.fa-facebook
+{
+    &:hover{color: blue;}
+}
+
+
+.newspaper 
+{
+    padding: 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+.ball 
+{
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    background: #c00;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: transform 1s;
+}
+/*
+.animatedDiv
+{
+    font-size: 1.6rem;
+    padding: 20px;
+    border: 3px solid red;
+    border-radius: 20px;
+    width: 480px;
+  
+    display: none;
+    opacity: 0;
+    transition:
+      opacity 1s,
+      display 1s allow-discrete;
+     Equivalent to
+    transition: all 1s allow-discrete; 
+}
+
+.showing {
+    opacity: 1;
+    display: block;
+  }
+starting-style {
+    .showing {
+      opacity: 0;
+    }
+  }
+    */

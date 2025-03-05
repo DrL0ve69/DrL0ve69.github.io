@@ -1,99 +1,158 @@
-
+// Balises générales
 body
 {
-    font-family: $mainFont;
+    background-color: $secondary;
+    color: $mainFontClr;
+    font-size: 1.5rem;
 }
-/* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-}
-/* 8. Improve line wrapping */
-p {
-    text-wrap: pretty;
-}
-section
+// Les custom tooltips
+.custom-tooltip 
 {
-    min-height: 100vh;
+    --bs-tooltip-bg: #ff5f09;
+    --bs-tooltip-color: #e5e8ee;
 }
-a, .nav-link
+// Flèche retour en haut
+#flecheHaut
 {
-    text-decoration: none;
-    color: black;
+    color: $primary;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 2.5rem;
+    z-index: 1;
     &:hover
     {
-        color: darken($primary, 0.8);
+        cursor: pointer;
+        color: #ff772e;
     }
 }
-.active
+// Le panier offCavenas, modifier le innerHtml pour utiliser les row-col de bootstrap
+// Les classes cartItemQuantity, cartItemPrixTotal, cartItemNom, cartImage, itemCart
+.offcanvas-body .itemCart
 {
-    color: $primary;
-}
-p{color: black;}
-ul
-{
-    list-style: none;
-    li
-    {
-        margin: 1rem;
-    }
-}
-i
-{
-    font-size: 2.5rem;
-    color: $primary;
-}
-.fa-facebook
-{
-    &:hover{color: blue;}
-}
-
-
-.newspaper 
-{
-    padding: 0.5rem;
-    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: white;
+    margin-bottom: 10px;
+}
+
+.offcanvas-body .itemCart:nth-child(even)
+{
+    background-color: #eda27a;
+}
+
+.offcanvas-body .itemCart .cartItemQuantity
+{
+    display: flex;
+}
+
+.offcanvas-body .itemCart .cartItemQuantity span
+{
+    width: 30px;
+    height: 30px;
+    background-color: $primary;
+    color: $mainFontClr;
+    border-radius: 50%;
+    padding-bottom: 40px;
     cursor: pointer;
 }
-
-
-.ball 
+.offcanvas-body .itemCart .cartItemQuantity span:nth-child(2)
 {
-    border-radius: 25px;
-    width: 50px;
-    height: 50px;
-    background: #c00;
-    position: relative;
-    top: 0;
-    left: 0;
-    transition: transform 1s;
+    background-color: transparent;
+    color: $secondary;
+    cursor: text;
 }
-/*
-.animatedDiv
+.offcanvas-body .itemCart img
 {
-    font-size: 1.6rem;
-    padding: 20px;
-    border: 3px solid red;
-    border-radius: 20px;
-    width: 480px;
-  
-    display: none;
-    opacity: 0;
-    transition:
-      opacity 1s,
-      display 1s allow-discrete;
-     Equivalent to
-    transition: all 1s allow-discrete; 
+    width: 100%;
 }
-
-.showing {
-    opacity: 1;
-    display: block;
-  }
-starting-style {
-    .showing {
-      opacity: 0;
+// Classe des boutons X (fermer)
+.btn-close
+{
+    background-color: $primary;
+}
+// Les customs pour le header
+nav
+{
+    background-color: $secondary;
+    margin-bottom: 2rem;
+}
+.active-link
+{
+    color: $primary;
+}
+.nav-link:not(.active-link)
+{
+    color: $mainFontClr;
+}
+.nav-link:hover
+{
+    color: darken($primary, 0.7);
+}
+//Le menu hamburger
+.navbar-toggler
+{
+    background-color: $primary;
+    color: $mainFontClr;
+}
+.dropdown-item
+{
+    background-color: $secondary;
+    color: $mainFontClr;
+    &:hover
+    {
+        background-color: $primary;
     }
-  }
-    */
+}
+// L'icône du panier dans le nav
+#icon-cart
+{
+    font-size: 1.5rem;
+    position: relative;
+    span
+    {
+        font-size: 1rem;
+        background-color: $secondary;
+        color: $primary;
+        position: absolute;
+        top: 0.5rem;
+        left: 1rem;
+        border-radius: 50%;
+        padding: 0.25rem;
+    }
+}
+// Custom de la section Hero
+h1
+{
+    color: $mainFontClr;
+}
+.hero
+{
+    min-height: 90vh;
+    
+}
+
+// Section produits
+#sectionProduits
+{
+    img
+    {
+        height: clamp(200px, 15rem, 450px);
+    }
+}
+
+// Carte produits
+.btn-card
+{
+    color: $mainFontClr;
+}
+.card
+{
+    background-color: $mainFontClr;
+    color: $secondary;
+}
+.card-title
+{
+    text-decoration: underline;
+}
