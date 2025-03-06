@@ -11,35 +11,38 @@
 
 <body class="container mt-5">
     <h2 class="mb-4">Inscription</h2>
-    <form id="signupForm">
+    <form id="signupForm" class="needs-validation" novalidate>
         <div class="mb-3">
             <label for="name" class="form-label">Nom :</label>
-            <input type="text" class="form-control form-control-lg" id="name" required>
-            <div class="invalid-feedback"></div>
+            <input type="text" class="form-control form-control-lg" id="name" minlength="2" maxlength="25" required>
+            <div class="valid-feedback">Excellent</div>
+            <div class="invalid-feedback">Ne peut pas être vide, 2 caractères minimum</div>
         </div>
 
         <div class="mb-3">
             <label for="email" class="form-label">Email :</label>
             <input type="email" class="form-control form-control-lg" id="email" required>
-            <div class="invalid-feedback"></div>
+            <div class="invalid-feedback">Email invalide</div>
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 position-relative">
             <label for="password" class="form-label">Mot de passe :</label>
-            <input type="password" class="form-control form-control-lg" id="password" required>
-            <div class="invalid-feedback"></div>
+            <input type="password" class="form-control form-control-lg" id="password" minlength="6" maxlength="40" required>
+            <div class="invalid-tooltip position-absolute" style="right: 0px;">Minimum 6 caractères, Max: 40</div>
+            <div class="valid-tooltip position-absolute" style="right: 0px;">Bravo!</div>
         </div>
 
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="terms">
             <label class="form-check-label" for="terms">J'accepte les conditions d'utilisation</label>
-            <div class="invalid-feedback"></div>
+            <div class="invalid-tooltip"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">S'inscrire</button>
     </form>
 
-<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="formValidation.js"></script>
 
 </body>
 
