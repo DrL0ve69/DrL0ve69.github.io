@@ -206,3 +206,13 @@ const initApp = () =>
     refreshCartHTML();
 }
 initApp();
+
+// Ceci va dans le main script, manipulation diverses:
+// La flèche de retour sur le scroll
+window.addEventListener('scroll',()=>
+{
+    const flecheHaut = document.querySelector('#flecheHaut');
+    
+    if(scrollY > 100)flecheHaut.style.visibility = 'visible';
+    else flecheHaut.style.visibility = 'hidden';
+})

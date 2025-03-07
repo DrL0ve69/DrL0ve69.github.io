@@ -11862,6 +11862,7 @@ body {
   right: 30px;
   font-size: 2.5rem;
   z-index: 1;
+  visibility: hidden;
 }
 #flecheHaut:hover {
   cursor: pointer;
