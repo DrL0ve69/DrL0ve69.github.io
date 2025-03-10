@@ -2,6 +2,7 @@ const form = document.querySelector('#signupForm');
 const inputNom = document.querySelector('#nom');
 const inputEmail = document.querySelector('#email');
 const inputPassword = document.querySelector('#password');
+const inputCheckbox = document.querySelector('terms');
 
 /*
 form.addEventListener('submit',e=>
@@ -15,6 +16,8 @@ function emailIsValid(email) {
 }
 */
 // Example starter JavaScript for disabling form submissions if there are invalid fields
+// mettre une variable = cela, pour exporter le 
+
 (() => {
     'use strict'
   
@@ -32,4 +35,6 @@ function emailIsValid(email) {
         form.classList.add('was-validated')
       }, false)
     })
-  })()
+})()
+
+

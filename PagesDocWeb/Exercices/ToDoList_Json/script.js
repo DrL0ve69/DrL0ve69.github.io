@@ -211,6 +211,6 @@ function getData_Prime2()
             'x-Dr.L0v3': 'Doit commencer par la lettre x pour un header personnel'
         },
     });
-    console.log(response.headers.get('x-Dr.L0v3'))
+    console.log(response)
 }
 getData_Prime2();
