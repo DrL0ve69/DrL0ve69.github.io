@@ -167,6 +167,7 @@ const refreshCartHTML = () =>
             </div>
         `;
         cartBody.append(newItem);
+
     })
     totalPanier.textContent = totalQuantity;
 }
