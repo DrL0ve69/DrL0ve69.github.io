@@ -5,6 +5,10 @@ body
     color: $mainFontClr;
     font-size: 1.5rem;
 }
+section
+{
+    padding: 1rem;
+}
 // Les custom tooltips
 .custom-tooltip 
 {
@@ -12,6 +16,7 @@ body
     --bs-tooltip-color: #e5e8ee;
 }
 // Flèche retour en haut
+// on pourrait aussi utilié une translation ?
 #flecheHaut
 {
     color: $primary;
@@ -127,13 +132,14 @@ nav
 h1
 {
     color: $mainFontClr;
-}
-.hero
-{
-    min-height: 90vh;
-    
+    margin: 100px 0;
 }
 
+h2
+{
+    color: $mainFontClr;
+    margin: 50px 25px;
+}
 // Section produits
 #sectionProduits
 {

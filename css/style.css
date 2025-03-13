@@ -11850,6 +11850,10 @@ body {
   font-size: 1.5rem;
 }
 
+section {
+  padding: 1rem;
+}
+
 .custom-tooltip {
   --bs-tooltip-bg: #ff5f09;
   --bs-tooltip-color: #e5e8ee;
@@ -11956,10 +11960,12 @@ nav {
 
 h1, .h1 {
   color: #e5e8ee;
+  margin: 100px 0;
 }
 
-.hero {
-  min-height: 90vh;
+h2, .h2 {
+  color: #e5e8ee;
+  margin: 50px 25px;
 }
 
 #sectionProduits img {
