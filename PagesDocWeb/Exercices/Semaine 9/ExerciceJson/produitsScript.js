@@ -70,11 +70,19 @@ function convertJson()
                             <p class="card-text text-center">${produit.prixUnitaire}$</p>
                             <div class="container-fluid d-flex justify-content-center">
                                 <div class="container-sm d-flex align-items-center justify-content-around">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Launch demo modal
+                                <button
+                                    data-image="${produit.image}"
+                                    data-description="${produit.description}"
+                                    data-prixUnitaire="${produit.prixUnitaire}" 
+                                    data-titre="${produit.titre}" 
+                                    data-id="${produit.id}"
+                                    type="button" class="btn btn-primary voirDetails" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Launch demo modal
                                 </button>
-                                <button 
-                                    data-prix="${produit.prixUnitaire}" 
+                                <button
+                                    data-image="${produit.image}"
+                                    data-description="${produit.description}"
+                                    data-prixUnitaire="${produit.prixUnitaire}" 
                                     data-titre="${produit.titre}" 
                                     data-id="${produit.id}" 
                                     class="btn btn-primary btn-card addCart text-center">
@@ -87,7 +95,38 @@ function convertJson()
                 `;
             containerRowProduits.append(productCard);
         });
+        const btndetails = document.querySelectorAll(".voirDetails");
+        console.log(btndetails);
+        btndetails.forEach(btn =>
+        {
+            btn.addEventListener('click', e => 
+            {
+                const idProduit = e.target.getAttribute('data-id');
+                const titreProduit = e.target.getAttribute('data-titre');
+                const prixUnitaireProduit = e.target.getAttribute('data-prixUnitaire');
+                const descriptionProduit = e.target.getAttribute('data-description');
+                const imageProduit = e.target.getAttribute('data-image');
+                showProductModal(idProduit, titreProduit, descriptionProduit, prixUnitaireProduit, imageProduit);
+            })
+        })
     })
     .catch(erreur => console.error('Erreur dans la conversion du fichier =>', erreur))
 }
 convertJson();
+
+
+
+function showProductModal(id, titre, description, prixUnitaire, image)
+{
+    const modalTitle = document.querySelector('.modal-title');
+    modalTitle.textContent = titre;
+
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = 
+    `
+        <img src="${image}" class="img-fluid mb-3" alt="${titre}">
+        <p class="text-center">${id}. ${description}</p>
+        <p class="text-center">${prixUnitaire} $</p>
+    `
+
+}
