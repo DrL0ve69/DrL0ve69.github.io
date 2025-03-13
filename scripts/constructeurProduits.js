@@ -75,7 +75,7 @@ console.log(listeProduits);
 // Rangées de produits
 const rowProduits = document.querySelector("#rangeeProduits");
 console.log(rowProduits);
-// Ajout dynamique de produit à la page
+// Ajout dynamique de produit à la page, le aspect ratio: 1 => image carrée
 listeProduits.forEach(produit =>
 {
     let newProduit = document.createElement("div");
@@ -84,14 +84,20 @@ listeProduits.forEach(produit =>
     newProduit.innerHTML = 
     `
         <div class="card" style="width: 18rem;">
-            <img src="${produit.image}" alt="...">
+            <img src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
             <div class="card-body">
                 <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
                 <p class="card-text">${produit.description} ${produit.id}</p>
                 <p class="card-text text-center">${produit.prixUnitaire}$</p>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="container-sm d-flex align-items-center justify-content-center">
-                     <button data-id="${produit.id}" class="btn btn-primary btn-card addCart text-center">Ajouter au panier</button>
+                     <button 
+                        data-id="${produit.id}"
+                        data-prix="${produit.prixUnitaire}" 
+                        data-titre="${produit.titre}"                         
+                        class="btn btn-primary btn-card addCart text-center">
+                            Ajouter au panier
+                     </button>
                     </div>
                 </div>
             </div>
@@ -142,10 +148,11 @@ const refreshCartHTML = () =>
 
     // Libérer le body du panier
     cartBody.innerHTML = null;
+    let sommePanier = 0;
     cart.forEach(item => 
     {
         totalQuantity = totalQuantity + item.quantity;
-
+        
 
         let position = listeProduits.findIndex(value => value.id == item.produit_id);
         let infoProduit = listeProduits[position];
@@ -167,9 +174,12 @@ const refreshCartHTML = () =>
             </div>
         `;
         cartBody.append(newItem);
+        sommePanier += infoProduit.prixUnitaire * item.quantity;
 
     })
     totalPanier.textContent = totalQuantity;
+    const containerSommePanier = document.querySelector('#totalPanier span');
+    containerSommePanier.textContent = sommePanier;
 }
 // Évènement click sur la page
 document.addEventListener('click', e =>
