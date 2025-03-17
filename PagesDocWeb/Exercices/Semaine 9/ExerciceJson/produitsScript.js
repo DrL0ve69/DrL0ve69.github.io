@@ -1,3 +1,6 @@
+// Cet exemple est incomplet et non-fonctionnel
+
+
 const listeProduits = 
 [
   {
@@ -45,9 +48,11 @@ const listeProduits =
 ]
 
 const containerRowProduits = document.querySelector('#rowProduits');
-const cartContainer = document.querySelector('#cart');
+const cartContainer = document.querySelector('.offcanvas-body');
 const totalContainer = document.querySelector('#total');
-const cartCount = document.querySelector('#cart-count');
+const cartCount = document.querySelector('.fa-cart-shopping span');
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function convertJson()
 {
@@ -109,6 +114,20 @@ function convertJson()
                 showProductModal(idProduit, titreProduit, descriptionProduit, prixUnitaireProduit, imageProduit);
             })
         })
+
+        const btnCart = document.querySelectorAll(".addCart");
+
+        btnCart.forEach(btn =>
+            {
+                  btn.addEventListener('click', e => 
+                  {
+                      const idProduit = e.target.getAttribute('data-id');
+                      const titreProduit = e.target.getAttribute('data-titre');
+                      const prixUnitaireProduit = e.target.getAttribute('data-prixUnitaire');
+                      const imageProduit = e.target.getAttribute('data-image');
+                      addToCart(idProduit, titreProduit, prixUnitaireProduit, imageProduit);
+                  })
+            })
     })
     .catch(erreur => console.error('Erreur dans la conversion du fichier =>', erreur))
 }
@@ -131,3 +150,45 @@ function showProductModal(id, titre, description, prixUnitaire, image)
 
 }
 
+function addToCart(id, titre, prix, img)
+{
+    const cartItem = cart.find(item => item.id == id);
+    if(cartItem)
+    {
+        cartItem.quantity++;
+    }
+    else
+    {
+        cart.push({id, titre, prix, quantity :1});
+    }
+    //saveCart();
+    updateCart();
+    
+}
+
+function updateCart()
+{
+    cartContainer.innerHTML = "";
+    let total = 0;
+    let itemCount = 0;
+    cart.forEach(item => 
+    {
+        total += item.prix * item.quantity;
+        itemCount += item.quantity;
+        const listeItem = document.createElement('li');
+
+        listeItem.innerHTML =
+        `
+            ${item.titre} X ${item.quantity} - ${item.prix * item.quantity}
+            <button
+                data-id="${item.id}" 
+                class="btn btn-danger removeItem">
+                X
+            </button>
+        `;
+
+        cartContainer.appendChild(listeItem);
+
+    })
+    cartCount.textContent = itemCount;
+}

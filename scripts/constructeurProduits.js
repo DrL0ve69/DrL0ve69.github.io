@@ -169,7 +169,7 @@ const refreshCartHTML = () =>
                 <img src="${infoProduit.image}" />
             </div>
             <div class="cartItemNom">NomProduit</div>
-            <div class="cartItemPrixTotal">${infoProduit.prixUnitaire * item.quantity}$</div>
+            <div class="cartItemPrixTotal">${(infoProduit.prixUnitaire * item.quantity).toFixed(2)}$</div>
             <div class="cartItemQuantity">
                 <span class="minus" data-id="${infoProduit.id}">-</span>
                 <span>${item.quantity}</span>
@@ -182,7 +182,7 @@ const refreshCartHTML = () =>
     })
     totalPanier.textContent = totalQuantity;
     const containerSommePanier = document.querySelector('#totalPanier span');
-    containerSommePanier.textContent = sommePanier;
+    containerSommePanier.textContent = sommePanier.toFixed(2);
 }
 // Évènement click sur la page
 document.addEventListener('click', e =>
@@ -255,10 +255,18 @@ imgCard.forEach(imgCarte =>
                 <div class="infoLightbox">
                     <h3>${objProduit.titre}</h3>
                     <p>${objProduit.description}</p>
+                                <div class="container">
+                    <button 
+                        data-id="${objProduit.id}"
+                        data-prix="${objProduit.prixUnitaire}" 
+                        data-titre="${objProduit.titre}"                         
+                        class="btn btn-primary btn-card addCart text-center">
+                            Ajouter au panier
+                    </button>
                 </div>
-                <div class="prixProduitLightbox text-center">
-                    ${objProduit.prixUnitaire}$
-                </div>
+            </div>
+            <div class="prixProduitLightbox text-center">
+                ${objProduit.prixUnitaire}$
             </div>
         `;
         document.body.prepend(lightboxProduit);
