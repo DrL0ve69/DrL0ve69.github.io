@@ -12016,47 +12016,6 @@ h2, .h2 {
   height: clamp(200px, 15rem, 450px);
 }
 
-.custom-shape-divider-bottom-1742172975 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1742172975 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 25px;
-}
-
-.custom-shape-divider-bottom-1742172975 .shape-fill {
-  fill: #FF772E;
-}
-
-.custom-shape-divider-top-1742173232 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1742173232 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 50px;
-}
-
-.custom-shape-divider-top-1742173232 .shape-fill {
-  fill: #FF772E;
-}
-
 .btn-card {
   color: #e5e8ee;
 }
@@ -12071,6 +12030,10 @@ h2, .h2 {
 
 .card-title {
   text-decoration: underline;
+}
+
+#sectionSavoirPlus {
+  min-height: 100vh;
 }
 
 /*
