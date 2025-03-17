@@ -222,7 +222,34 @@ h2
 // Section en savoir plus, ajouter des animations, style bulles en background
 #sectionSavoirPlus
 {
-    min-height: 100vh;
+    min-height: 80vh;
+    background-color: $mainFontClr;
+    border-radius:50% 100%;
+    border-bottom: 100px solid $primary;
+    border-top: 100px solid $primary;
+    border-right: 4px solid palevioletred;
+
+    .btnOeil
+    {
+        background-color: blue;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        color: $mainFontClr;
+        transition: all 1.5s ease-in-out;
+        &:hover
+        {
+            color: #ff5f09;
+            height: 200px;
+            width: 200px;
+        }
+    }
+}
+
+//Début footer
+footer
+{
+    min-height: 10vh;
 }
 /*
     .newspaper 

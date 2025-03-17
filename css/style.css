@@ -12033,7 +12033,29 @@ h2, .h2 {
 }
 
 #sectionSavoirPlus {
-  min-height: 100vh;
+  min-height: 80vh;
+  background-color: #e5e8ee;
+  border-radius: 50% 100%;
+  border-bottom: 100px solid #ff5f09;
+  border-top: 100px solid #ff5f09;
+  border-right: 4px solid palevioletred;
+}
+#sectionSavoirPlus .btnOeil {
+  background-color: blue;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  color: #e5e8ee;
+  transition: all 1.5s ease-in-out;
+}
+#sectionSavoirPlus .btnOeil:hover {
+  color: #ff5f09;
+  height: 200px;
+  width: 200px;
+}
+
+footer {
+  min-height: 10vh;
 }
 
 /*
