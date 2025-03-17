@@ -130,3 +130,4 @@ function showProductModal(id, titre, description, prixUnitaire, image)
     `
 
 }
+

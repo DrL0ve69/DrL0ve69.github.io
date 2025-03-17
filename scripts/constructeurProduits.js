@@ -84,7 +84,10 @@ listeProduits.forEach(produit =>
     newProduit.innerHTML = 
     `
         <div class="card" style="width: 18rem;">
-            <img src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
+            <img
+                data-id="${produit.id}"
+                data-prix="${produit.prixUnitaire}"  
+                src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
             <div class="card-body">
                 <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
                 <p class="card-text">${produit.description} ${produit.id}</p>
@@ -226,4 +229,48 @@ window.addEventListener('scroll',()=>
     
     if(scrollY > 100)flecheHaut.style.visibility = 'visible';
     else flecheHaut.style.visibility = 'hidden';
+})
+
+// Création dynamique d'un modal lorsqu'on clique sur l'image ou le btn détail
+const imgCard = document.querySelectorAll('.card img');
+console.log(imgCard);
+
+imgCard.forEach(imgCarte =>
+{
+    imgCarte.addEventListener('click',e =>
+    {
+        let imgProduit = e.target;
+        
+        let objProduit = listeProduits.find(p => p.image == imgProduit.src); // On pourrait aussi utiliser les data-attributes
+        console.log(objProduit);
+        let lightboxProduit = document.createElement('div');
+        lightboxProduit.classList.add('lightboxContainer')
+
+        // Définir le contenu du lightbox:
+        lightboxProduit.innerHTML = 
+        `
+            <button class="btn btn-primary" id="btnEscape">&times;</button>
+            <div class="image-container">
+                <img id="imgLightbox" src="${objProduit.image}" alt="${objProduit.titre}">
+                <div class="infoLightbox">
+                    <h3>${objProduit.titre}</h3>
+                    <p>${objProduit.description}</p>
+                </div>
+                <div class="prixProduitLightbox text-center">
+                    ${objProduit.prixUnitaire}$
+                </div>
+            </div>
+        `;
+        document.body.prepend(lightboxProduit);
+
+        // Enlever le lightbox du body
+        lightboxProduit.addEventListener('click',e => 
+        {
+            let btnFermer = document.getElementById('btnEscape');
+            console.log(e.target)
+            if(e.target == btnFermer || e.target == document.querySelector('.lightboxContainer'))document.body.firstChild.remove();
+            
+        })
+
+    })
 })
