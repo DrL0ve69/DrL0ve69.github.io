@@ -15,12 +15,15 @@ function getData()
         });
         produitSelectionne = listeProduits.find(p => p.id == selectedProductID);
         console.log(produitSelectionne);
+        let divContainer = document.createElement('div');
+        divContainer.classList.add('container');
         let img = document.createElement('img');
         img.src = produitSelectionne.image;
-        img.style.width = '50vw';
+        img.style.width = '50%';
         img.style.height = '100vh';
 
-        document.body.append(img);
+        document.body.append(divContainer);
+        divContainer.append(img);
         console.log(img);
     })
 }
