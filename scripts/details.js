@@ -17,7 +17,9 @@ function getData()
         console.log(produitSelectionne);
         let img = document.createElement('img');
         img.src = produitSelectionne.image;
-        img.style.width = '300px';
+        img.style.width = '50vw';
+        img.style.height = '100vh';
+
         document.body.append(img);
         console.log(img);
     })
