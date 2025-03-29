@@ -25,6 +25,60 @@ Minimum : 6 produits. Les données doivent être chargées dynamiquement avec Ja
   </div>
 </div>
 */
+
+
+function convertJson()
+{
+    fetch('produits.json')
+    .then(resp => resp.json())
+    .then(produitsData => 
+    {
+        produitsData.forEach(produit => 
+        {
+            const productCard = document.createElement('div');
+            productCard.classList = "col col-md-6 col-lg-4 col-xxl-3";
+            console.log(produit)
+
+                productCard.innerHTML = 
+                `
+                <div class="card" style="width: 18rem;">
+                    <img
+                        data-id="${produit.id}"
+                        data-prix="${produit.prixUnitaire}"  
+                        src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
+                    <div class="card-body">
+                        <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
+                        <p class="card-text">${produit.description} ${produit.id}</p>
+                        <p class="card-text text-center">${produit.prixUnitaire}$</p>
+                        <div class="container-fluid d-flex justify-content-center">
+                            <div class="container-sm d-flex align-items-center justify-content-center">
+                             <button 
+                                data-id="${produit.id}"
+                                data-prix="${produit.prixUnitaire}" 
+                                data-titre="${produit.titre}"                         
+                                class="btn btn-primary btn-card addCart text-center">
+                                    Ajouter au panier
+                             </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            rowProduits.append(productCard);
+            listeProduits.push(produit); // whyyyyyyyyyyyyyyy wont you fkin work lol, load apres les fonctions
+            
+            
+        });
+        
+        // Mettre tout le code ici?!?!?
+    })
+    .catch(erreur => console.error('Erreur dans la conversion du fichier =>', erreur))
+    
+}
+
+convertJson();
+
+
 const listeProduits = 
 [
   {
@@ -75,16 +129,16 @@ console.log(listeProduits);
 
 // Rangées de produits
 const rowProduits = document.querySelector("#rangeeProduits");
-console.log(rowProduits);
+
 // Ajout dynamique de produit à la page, le aspect ratio: 1 => image carrée
 listeProduits.forEach(produit =>
 {
     let newProduit = document.createElement("div");
     newProduit.classList = "col col-md-6 col-lg-4 col-xxl-3";
-    console.log(newProduit);
+    //console.log(newProduit);
     newProduit.innerHTML = 
     `
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img
                 data-id="${produit.id}"
                 data-prix="${produit.prixUnitaire}"  
@@ -108,6 +162,7 @@ listeProduits.forEach(produit =>
         </div>
     `;
     rowProduits.append(newProduit);
+    
 })
 
 
