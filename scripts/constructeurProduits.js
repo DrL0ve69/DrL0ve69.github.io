@@ -130,14 +130,17 @@ console.log(listeProduits);
 // Rangées de produits
 const rowProduits = document.querySelector("#rangeeProduits");
 
+
 // Ajout dynamique de produit à la page, le aspect ratio: 1 => image carrée
 listeProduits.forEach(produit =>
 {
     let newProduit = document.createElement("div");
     newProduit.classList = "col col-md-6 col-lg-4 col-xxl-3";
     //console.log(newProduit);
+    //console.log(newProduit);
     newProduit.innerHTML = 
     `
+        <div class="card">
         <div class="card">
             <img
                 data-id="${produit.id}"
@@ -162,6 +165,7 @@ listeProduits.forEach(produit =>
         </div>
     `;
     rowProduits.append(newProduit);
+    
     
 })
 
