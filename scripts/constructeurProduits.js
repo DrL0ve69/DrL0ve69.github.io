@@ -71,6 +71,7 @@ const listeProduits =
   },
 ]
 console.log(listeProduits);
+// listeProduits = fetchdataJson
 
 // Rangées de produits
 const rowProduits = document.querySelector("#rangeeProduits");
