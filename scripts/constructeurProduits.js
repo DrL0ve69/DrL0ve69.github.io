@@ -55,7 +55,6 @@ function convertJson()
                     src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
                 <div class="card-body">
                     <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
-                    <p class="card-text">${produit.description} ${produit.id}</p>
                     <p class="card-text text-center">${produit.prixUnitaire}$</p>
                     <div class="container-fluid d-flex justify-content-center">
                         <div class="container-sm d-flex align-items-center justify-content-center">
