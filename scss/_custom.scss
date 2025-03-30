@@ -181,12 +181,22 @@ h1
 {
     color: $mainFontClr;
     margin-bottom: 50px;
+    font-size: 60px;
+    font-family: "Knewave", system-ui;
 }
-
+#slogan
+{
+    font-family: "Molle", cursive;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 900;
+}
 h2
 {
     color: $mainFontClr;
     margin: 50px 25px;
+    font-family: "Fredericka the Great", serif;
+    font-size: 48px;
 }
 // Section produits
 #sectionProduits
