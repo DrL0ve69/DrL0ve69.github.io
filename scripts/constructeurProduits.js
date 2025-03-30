@@ -258,7 +258,7 @@ console.log(listeProduits);
 
 
 
-// Création dynamique d'un modal lorsqu'on clique sur l'image ou le btn détail
+
 
 
 

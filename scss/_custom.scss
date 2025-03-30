@@ -251,26 +251,10 @@ footer
 {
     min-height: 10vh;
 }
-/*
-    .newspaper 
-{
-    padding: 0.5rem;
-    text-transform: uppercase;
-    text-align: center;
-    background-color: white;
-    cursor: pointer;
-}
 
-
-.ball 
+#lienPorfolio
 {
-    border-radius: 25px;
-    width: 50px;
-    height: 50px;
-    background: #c00;
-    position: relative;
-    top: 0;
-    left: 0;
-    transition: transform 1s;
+    color: palegreen;
+    text-decoration: none;
+    &:hover{ color: #ff5f09;}
 }
-*/
