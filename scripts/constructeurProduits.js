@@ -25,7 +25,7 @@ Minimum : 6 produits. Les données doivent être chargées dynamiquement avec Ja
   </div>
 </div>
 */
-
+const listeProduits = []
 
 function convertJson()
 {
@@ -33,147 +33,48 @@ function convertJson()
     .then(resp => resp.json())
     .then(produitsData => 
     {
-        produitsData.forEach(produit => 
-        {
-            const productCard = document.createElement('div');
-            productCard.classList = "col col-md-6 col-lg-4 col-xxl-3";
-            console.log(produit)
+        produitsData.forEach(produit =>listeProduits.push(produit)); 
 
-                productCard.innerHTML = 
-                `
-                <div class="card" style="width: 18rem;">
-                    <img
-                        data-id="${produit.id}"
-                        data-prix="${produit.prixUnitaire}"  
-                        src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
-                    <div class="card-body">
-                        <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
-                        <p class="card-text">${produit.description} ${produit.id}</p>
-                        <p class="card-text text-center">${produit.prixUnitaire}$</p>
-                        <div class="container-fluid d-flex justify-content-center">
-                            <div class="container-sm d-flex align-items-center justify-content-center">
-                             <button 
-                                data-id="${produit.id}"
-                                data-prix="${produit.prixUnitaire}" 
-                                data-titre="${produit.titre}"                         
-                                class="btn btn-primary btn-card addCart text-center">
-                                    Ajouter au panier
-                             </button>
-                            </div>
+        // Rangées de produits
+        const rowProduits = document.querySelector("#rangeeProduits");
+
+
+        // Ajout dynamique de produit à la page, le aspect ratio: 1 => image carrée
+        listeProduits.forEach(produit =>
+        {
+        let newProduit = document.createElement("div");
+        newProduit.classList = "col col-md-6 col-lg-4 col-xxl-3";
+        //console.log(newProduit);
+        //console.log(newProduit);
+        newProduit.innerHTML = 
+        `
+            <div class="card">
+                <img
+                    data-id="${produit.id}"
+                    data-prix="${produit.prixUnitaire}"  
+                    src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
+                <div class="card-body">
+                    <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
+                    <p class="card-text">${produit.description} ${produit.id}</p>
+                    <p class="card-text text-center">${produit.prixUnitaire}$</p>
+                    <div class="container-fluid d-flex justify-content-center">
+                        <div class="container-sm d-flex align-items-center justify-content-center">
+                         <button 
+                            data-id="${produit.id}"
+                            data-prix="${produit.prixUnitaire}" 
+                            data-titre="${produit.titre}"                         
+                            class="btn btn-primary btn-card addCart text-center">
+                                Ajouter au panier
+                         </button>
                         </div>
                     </div>
                 </div>
-            `;
-            rowProduits.append(productCard);
-            listeProduits.push(produit); // whyyyyyyyyyyyyyyy wont you fkin work lol, load apres les fonctions
-            
-            
-        });
-        
-        // Mettre tout le code ici?!?!?
-    })
-    .catch(erreur => console.error('Erreur dans la conversion du fichier =>', erreur))
-    
-}
-
-convertJson();
-
-
-const listeProduits = 
-[
-  {
-    "id":1,
-    "titre": "Produit 1",
-    "prixUnitaire": 199.99,
-    "description": "Description produit",
-    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png"
-  },
-  {
-    "id":2,
-    "titre": "Produit 2",
-    "prixUnitaire": 199.99,
-    "description": "Description produit",
-    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/20547d52-3e1b-4c3d-b917-f0d7e0eb8bdf/custom-nike-air-force-1-low-by-you-shoes.png"
-  },
-  {
-    "id":3,
-    "titre": "Produit 3",
-    "prixUnitaire": 199.99,
-    "description": "Description produit",
-    "image": "https://images.laced.com/products/83b250a4-e848-4d2c-b36b-5efa3ea0f012.jpg?auto=format&fit=max&w=3840&q=75"
-  },
-  {
-    "id":4,
-    "titre": "Produit 4",
-    "prixUnitaire": 199.99,
-    "description": "Description produit",
-    "image": "https://images.laced.com/products/e88566e0-0051-4948-ae08-5765bbdd6db0.jpg?auto=format&fit=max&w=3840&q=75"
-  },
-  {
-    "id":5,
-    "titre": "Produit 5",
-    "prixUnitaire": 199.99,
-    "description": "Description produit",
-    "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/956f694e-6ab5-48c5-a47d-fef6286590a8/KOBE+IX+ELITE+%28GS%29.png"
-  },
-  {
-    "id":6,
-    "titre": "Produit 6",
-    "prixUnitaire": 199.99,
-    "description": "Description produit",
-    "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c3967023-e1af-403c-bc21-4a398f9df18f/LEBRON+XXII+SN.png"
-  },
-]
-console.log(listeProduits);
-// listeProduits = fetchdataJson
-
-// Rangées de produits
-const rowProduits = document.querySelector("#rangeeProduits");
-
-
-// Ajout dynamique de produit à la page, le aspect ratio: 1 => image carrée
-listeProduits.forEach(produit =>
-{
-    let newProduit = document.createElement("div");
-    newProduit.classList = "col col-md-6 col-lg-4 col-xxl-3";
-    //console.log(newProduit);
-    //console.log(newProduit);
-    newProduit.innerHTML = 
-    `
-        <div class="card">
-        <div class="card">
-            <img
-                data-id="${produit.id}"
-                data-prix="${produit.prixUnitaire}"  
-                src="${produit.image}" alt="${produit.titre}" style="aspect-ratio: 1;">
-            <div class="card-body">
-                <a href="detail.html?id=${produit.id}"><h5 class="card-title">${produit.titre}</h5></a>
-                <p class="card-text">${produit.description} ${produit.id}</p>
-                <p class="card-text text-center">${produit.prixUnitaire}$</p>
-                <div class="container-fluid d-flex justify-content-center">
-                    <div class="container-sm d-flex align-items-center justify-content-center">
-                     <button 
-                        data-id="${produit.id}"
-                        data-prix="${produit.prixUnitaire}" 
-                        data-titre="${produit.titre}"                         
-                        class="btn btn-primary btn-card addCart text-center">
-                            Ajouter au panier
-                     </button>
-                    </div>
-                </div>
             </div>
-        </div>
-    `;
-    rowProduits.append(newProduit);
-    
-    
-})
+        `;
+        rowProduits.append(newProduit);  
+        })
 
-
-// Arranger les import export pour que le tout se lie vers un main.js de type module
-// Ceci va dans le cart.js
-
-let cart = [];
+        let cart = [];
 
 // Fonction qui permet le contrôle des produits dans le shopping cart
 const setProductInCart = (idProduit, quantity, position) =>
@@ -290,55 +191,74 @@ window.addEventListener('scroll',()=>
     if(scrollY > 100)flecheHaut.style.visibility = 'visible';
     else flecheHaut.style.visibility = 'hidden';
 })
+        // Le Lightbox 
+        const imgCard = document.querySelectorAll('.card img');
+        console.log(imgCard);
+        imgCard.forEach(imgCarte =>
+        {
+            imgCarte.addEventListener('click',e =>
+            {
+                let imgProduit = e.target;
+                
+                let objProduit = listeProduits.find(p => p.image == imgProduit.src); // On pourrait aussi utiliser les data-attributes
+                console.log(objProduit);
+                let lightboxProduit = document.createElement('div');
+                lightboxProduit.classList.add('lightboxContainer')
+        
+                // Définir le contenu du lightbox:
+                lightboxProduit.innerHTML = 
+                `
+                    <button class="btn btn-primary" id="btnEscape">&times;</button>
+                    <div class="image-container">
+                        <img id="imgLightbox" src="${objProduit.image}" alt="${objProduit.titre}">
+                        <div class="infoLightbox">
+                            <h3>${objProduit.titre}</h3>
+                            <p>${objProduit.description}</p>
+                                        <div class="container">
+                            <button 
+                                data-id="${objProduit.id}"
+                                data-prix="${objProduit.prixUnitaire}" 
+                                data-titre="${objProduit.titre}"                         
+                                class="btn btn-primary btn-card addCart text-center">
+                                    Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="prixProduitLightbox text-center">
+                        ${objProduit.prixUnitaire}$
+                    </div>
+                `;
+                document.body.prepend(lightboxProduit);
+        
+                // Enlever le lightbox du body
+                lightboxProduit.addEventListener('click',e => 
+                {
+                    let btnFermer = document.getElementById('btnEscape');
+                    console.log(e.target)
+                    if(e.target == btnFermer || e.target == document.querySelector('.lightboxContainer'))document.body.firstChild.remove(); 
+                })
+            })
+        })
+    })
+    .catch(erreur => console.error('Erreur dans la conversion du fichier =>', erreur));   
+}
+
+convertJson();
+
+
+
+console.log(listeProduits);
+// listeProduits = fetchdataJson
+
+
+
+
+// Arranger les import export pour que le tout se lie vers un main.js de type module
+// Ceci va dans le cart.js
+
+
 
 // Création dynamique d'un modal lorsqu'on clique sur l'image ou le btn détail
-const imgCard = document.querySelectorAll('.card img');
-console.log(imgCard);
 
-imgCard.forEach(imgCarte =>
-{
-    imgCarte.addEventListener('click',e =>
-    {
-        let imgProduit = e.target;
-        
-        let objProduit = listeProduits.find(p => p.image == imgProduit.src); // On pourrait aussi utiliser les data-attributes
-        console.log(objProduit);
-        let lightboxProduit = document.createElement('div');
-        lightboxProduit.classList.add('lightboxContainer')
 
-        // Définir le contenu du lightbox:
-        lightboxProduit.innerHTML = 
-        `
-            <button class="btn btn-primary" id="btnEscape">&times;</button>
-            <div class="image-container">
-                <img id="imgLightbox" src="${objProduit.image}" alt="${objProduit.titre}">
-                <div class="infoLightbox">
-                    <h3>${objProduit.titre}</h3>
-                    <p>${objProduit.description}</p>
-                                <div class="container">
-                    <button 
-                        data-id="${objProduit.id}"
-                        data-prix="${objProduit.prixUnitaire}" 
-                        data-titre="${objProduit.titre}"                         
-                        class="btn btn-primary btn-card addCart text-center">
-                            Ajouter au panier
-                    </button>
-                </div>
-            </div>
-            <div class="prixProduitLightbox text-center">
-                ${objProduit.prixUnitaire}$
-            </div>
-        `;
-        document.body.prepend(lightboxProduit);
 
-        // Enlever le lightbox du body
-        lightboxProduit.addEventListener('click',e => 
-        {
-            let btnFermer = document.getElementById('btnEscape');
-            console.log(e.target)
-            if(e.target == btnFermer || e.target == document.querySelector('.lightboxContainer'))document.body.firstChild.remove();
-            
-        })
-
-    })
-})
