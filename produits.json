@@ -9,7 +9,7 @@
     {
       "id":2,
       "titre": "Produit 2",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 122.22,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/20547d52-3e1b-4c3d-b917-f0d7e0eb8bdf/custom-nike-air-force-1-low-by-you-shoes.png"
     },
@@ -23,63 +23,63 @@
     {
       "id":4,
       "titre": "Produit 4",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 444.19,
       "description": "Description produit",
       "image": "https://images.laced.com/products/e88566e0-0051-4948-ae08-5765bbdd6db0.jpg?auto=format&fit=max&w=3840&q=75"
     },
     {
       "id":5,
       "titre": "Produit 5",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 255.55,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/956f694e-6ab5-48c5-a47d-fef6286590a8/KOBE+IX+ELITE+%28GS%29.png"
     },
     {
       "id":6,
       "titre": "Produit 6",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 366.66,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c3967023-e1af-403c-bc21-4a398f9df18f/LEBRON+XXII+SN.png"
     },
     {
       "id":7,
       "titre": "Produit 7",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 177.79,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5b0981ff-45f8-40c3-9372-32430a62aaea/W+NIKE+DUNK+HIGH.png"
     },
     {
       "id":8,
       "titre": "Produit 8",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 420.69,
       "description": "Description produit",
       "image": "https://media.wired.com/photos/63728604691ed08cc4b98976/master/w_2560%2Cc_limit/Nike-Swoosh-News-Gear.jpg"
     },
     {
       "id":9,
       "titre": "Produit 9",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 99.99,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/95fe7ade-6aee-4e60-bebd-1ef3693c309f/W+AF1+SHADOW.png"
     },
     {
       "id":10,
       "titre": "Produit 10",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 100.00,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/69da1e90-63d1-47d2-9372-4f6fb23f9eda/NIKE+AIR+FORCE+1+JEWEL.png"
     },
     {
       "id":11,
       "titre": "Produit 11",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 669.69,
       "description": "Description produit",
       "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/79709e27-52e9-406c-9438-57b0627db04c/nike-dunk-low-unlocked-by-you.png"
     },
     {
       "id":12,
       "titre": "Produit 12",
-      "prixUnitaire": 199.99,
+      "prixUnitaire": 312.12,
       "description": "Description produit",
       "image": "https://images.footballfanatics.com/basketball-essentials/mens-nike-red-air-zoom-gt-jump-2-basketball-shoes_ss5_p-5347835+pv-1+u-x06ajg3eflfgdq0ndme4+v-ehzygunvdnmjml6x3unf.jpg?_hv=2&w=600"
     }

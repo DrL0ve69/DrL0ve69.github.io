@@ -12020,6 +12020,10 @@ h2, .h2 {
   font-size: 48px;
 }
 
+h5, .h5 {
+  font-size: 32px;
+}
+
 #sectionProduits {
   position: relative;
 }
