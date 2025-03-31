@@ -259,26 +259,32 @@
             </div>
             <form id="formContacter" action="mailto:JoeBlo@chalala.ca" method="get" enctype="text/plain">
               <div class="modal-body">
-                <div class="mb-3">
+                <div class="mb-0">
                   <label for="recipient-name" class="col-form-label">Recipient:</label>
                   <input type="text" class="form-control" id="recipient-name" value="JoeBlo@chalala.ca" disabled>
                 </div>
 				<div class="row">
 					<div class="col col-md-6">
-						<div class="mb-3">
+						<div class="mb-0">
 							<label for="newInputNom" class="col-form-label">Vôtre nom:</label>
 							<input type="text" class="form-control" id="newInputNom" value="" 
 							required>
 						  </div>
 					</div>
 					<div class="col col-md-6">
-						<div class="mb-3">
+						<div class="mb-0">
 							<label for="newInputPrenom" class="col-form-label">Vôtre prénom:</label>
 							<input type="text" class="form-control" id="newInputPrenom" value="" required>
-						  </div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="mb-0">
+							<label for="newInputEmail" class="col-form-label">Adresse Courriel</label>
+							<input type="email" class="form-control" id="newInputEmail" value="" required>
+						</div>
 					</div>
 				</div>
-                <div class="mb-3">
+                <div class="mb-1">
                   <label for="message-text" class="col-form-label">Message:</label>
                   <textarea class="form-control" id="message-text" 
                   minlength="10"

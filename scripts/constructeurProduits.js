@@ -248,20 +248,22 @@ const formContacter = document.querySelector('#formContacter');
 const inputNom = document.querySelector('#newInputNom');
 const inputPrenom = document.querySelector('#newInputPrenom');
 const inputMessage = document.querySelector('#message-text');
-console.log(inputMessage);
+const inputEmail = document.querySelector('#newInputEmail');
+console.log(inputEmail);
 
 formContacter.addEventListener('submit',e => 
 {
     e.preventDefault();
     nomValide();
-    if(inputNom.validity = false)e.isValid=false
+    if(inputNom.validity = false)formContacter.isValid=false
     console.log(e);
 })
 
 function nomValide()
 {
-    if(inputNom.value.lenght <3)inputNom.validity = false;
+    if(inputNom.value.lenght <3)inputNom.tooShort = true;
     inputNom.validity = true;
+    console.log(inputNom.validity);
 }
 
 convertJson();
