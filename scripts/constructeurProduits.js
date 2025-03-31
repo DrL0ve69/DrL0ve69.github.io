@@ -238,26 +238,35 @@ window.addEventListener('scroll',()=>
                 })
             })
         })
+
     })
     .catch(erreur => console.error('Erreur dans la conversion du fichier =>', erreur));   
 }
 
+// Validation formulaire 
+const formContacter = document.querySelector('#formContacter');
+const inputNom = document.querySelector('#newInputNom');
+const inputPrenom = document.querySelector('#newInputPrenom');
+const inputMessage = document.querySelector('#message-text');
+console.log(inputMessage);
+
+formContacter.addEventListener('submit',e => 
+{
+    e.preventDefault();
+    nomValide();
+    if(inputNom.validity = false)e.isValid=false
+    console.log(e);
+})
+
+function nomValide()
+{
+    if(inputNom.value.lenght <3)inputNom.validity = false;
+    inputNom.validity = true;
+}
+
 convertJson();
-
-
 
 console.log(listeProduits);
 // listeProduits = fetchdataJson
 
-
-
-
 // Arranger les import export pour que le tout se lie vers un main.js de type module
-// Ceci va dans le cart.js
-
-
-
-
-
-
-
