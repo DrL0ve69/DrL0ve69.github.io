@@ -272,10 +272,12 @@ formContacter.addEventListener('submit',e =>
         messErreurs.textContent = "Vôtre message doit contenir au moins 10 caractères";
         return;
     }
+    alert('Envoie avec succès')
     formContacter.submit();
     allInputs.forEach(input => 
     {
         input.value = "";
+        input.style.borderColor = 'black';
     })
     messErreurs.textContent = "";
 })
@@ -296,9 +298,25 @@ allInputs.forEach(input =>
 {
     input.addEventListener('blur', e => 
         {
-            if((input.id == 'newInputNom' && inputNom.value.length <3) || (input.id == 'newInputPrenom' && inputPrenom.value.length <3))messErreurs.textContent = "Nom&Prénom doivent contenir au moins 3 caractères";
-            else if(input.id == 'newInputEmail' && !emailValide(inputEmail.value))messErreurs.textContent = "Email invalide";
-            else messErreurs.textContent = "";
+            if((input.id == 'newInputNom' && inputNom.value.length <3) || (input.id == 'newInputPrenom' && inputPrenom.value.length <3))
+            {
+                messErreurs.textContent = "Nom&Prénom doivent contenir au moins 3 caractères";
+                input.style.borderColor = 'red';
+            }
+            else if(input.id == 'newInputEmail' && !emailValide(inputEmail.value))
+            {
+                messErreurs.textContent = "Email invalide";
+                input.style.borderColor = 'red';
+            }
+            else if(input.id == 'message-text' && inputMessage.value.length < 10)
+            {
+                input.style.borderColor = 'red';
+            }
+            else
+            {
+                messErreurs.textContent = "";
+                input.style.borderColor = 'green';
+            }
         })
 })
 // Arranger les import export pour que le tout se lie vers un main.js de type module
