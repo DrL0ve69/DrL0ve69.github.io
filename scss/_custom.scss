@@ -272,3 +272,9 @@ footer
     text-decoration: none;
     &:hover{ color: #ff5f09;}
 }
+
+// Validation formulaire
+#errorMessages
+{
+    color: red;
+}

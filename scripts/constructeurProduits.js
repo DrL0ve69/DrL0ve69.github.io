@@ -249,32 +249,47 @@ const inputNom = document.querySelector('#newInputNom');
 const inputPrenom = document.querySelector('#newInputPrenom');
 const inputMessage = document.querySelector('#message-text');
 const inputEmail = document.querySelector('#newInputEmail');
-console.log(inputEmail);
+const messErreurs = document.querySelector('#errorMessages');
+
+const allInputs = [inputNom, inputPrenom, inputEmail, inputMessage];
+console.log(inputNom);
 
 formContacter.addEventListener('submit',e => 
 {
-    nomValide();
+    e.preventDefault();
+    if(inputNom.value.length <3 || inputPrenom.value.length <3)
+    {
+        messErreurs.textContent = "Nom&Prénom doivent contenir au moins 3 caractères";
+        return;
+    }
+    if(!emailValide(inputEmail.value))
+    {
+        messErreurs.textContent = "Email doit suivre ce format : Blablab@deslettreschiffres.abcd  (min 2, max 4 apres point)";
+        return;
+    }
+    if(!messageValide())
+    {
+        messErreurs.textContent = "Vôtre message doit contenir au moins 10 caractères";
+        return;
+    }
+    formContacter.submit();
+    allInputs.forEach(input => 
+    {
+        input.value = "";
+    })
+    messErreurs.textContent = "";
 })
 
-function nomValide()
-{
-    if(inputNom.value.lenght <3)return false;
-    return true;
-}
-function prenomValide()
-{
-    if(inputPrenom.value.lenght <1)return false;
-    return true;
-}
 function messageValide()
 {
-    if(inputMessage.lenght < 10)return false;
+    if(inputMessage.value.length < 10)return false;
     return true;
 }
 
-convertJson();
-
-console.log(listeProduits);
-// listeProduits = fetchdataJson
+function emailValide(email)
+{
+    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
+}
 
 // Arranger les import export pour que le tout se lie vers un main.js de type module
+convertJson();

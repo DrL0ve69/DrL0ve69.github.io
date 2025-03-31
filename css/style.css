@@ -12079,4 +12079,8 @@ footer {
 }
 #lienPorfolio:hover {
   color: #ff5f09;
+}
+
+#errorMessages {
+  color: red;
 }/*# sourceMappingURL=style.css.map */
