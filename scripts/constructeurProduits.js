@@ -253,17 +253,23 @@ console.log(inputEmail);
 
 formContacter.addEventListener('submit',e => 
 {
-    e.preventDefault();
     nomValide();
-    if(inputNom.validity = false)formContacter.isValid=false
-    console.log(e);
 })
 
 function nomValide()
 {
-    if(inputNom.value.lenght <3)inputNom.tooShort = true;
-    inputNom.validity = true;
-    console.log(inputNom.validity);
+    if(inputNom.value.lenght <3)return false;
+    return true;
+}
+function prenomValide()
+{
+    if(inputPrenom.value.lenght <1)return false;
+    return true;
+}
+function messageValide()
+{
+    if(inputMessage.lenght < 10)return false;
+    return true;
 }
 
 convertJson();
