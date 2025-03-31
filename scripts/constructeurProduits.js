@@ -291,5 +291,15 @@ function emailValide(email)
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 }
 
+
+allInputs.forEach(input => 
+{
+    input.addEventListener('blur', e => 
+        {
+            if((input.id == 'newInputNom' && inputNom.value.length <3) || (input.id == 'newInputPrenom' && inputPrenom.value.length <3))messErreurs.textContent = "Nom&Prénom doivent contenir au moins 3 caractères";
+            else if(input.id == 'newInputEmail' && !emailValide(inputEmail.value))messErreurs.textContent = "Email invalide";
+            else messErreurs.textContent = "";
+        })
+})
 // Arranger les import export pour que le tout se lie vers un main.js de type module
 convertJson();
